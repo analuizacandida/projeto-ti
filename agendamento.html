@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Horário</title>
+    <!-- Incluindo o CSS do flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Agendamento</h2>
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="service">Selecione o serviço desejado:</label>
+                <select id="service">
+                    <option value="" disabled selected>Escolha um serviço</option>
+                    <option value="corte">Corte de Cabelo</option>
+                    <option value="coloração">Coloração</option>
+                    <option value="manicure">Manicure</option>
+                    <option value="pedicure">Pedicure</option>
+                    <option value="massagem">Massagem</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Selecione a data de sua preferência:</label>
+                <input type="text" id="date" placeholder="Selecione a data">
+            </div>
+            <div class="form-group">
+                <label for="time">Escolha o horário:</label>
+                <input type="time" id="time">
+            </div>
+            
+            <button type="submit">Agendar</button>
+        </form>
+        <div id="confirmation" style="margin-top: 20px;"></div>
+    </div>
+
+  <!-- Incluindo o JS do flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Incluindo o JS personalizado -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          flatpickr("#date", {
+              dateFormat: "d/m/Y",
+              minDate: "today",
+              locale: "pt"
+          });
+
+          document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+              event.preventDefault();
+
+              const date = document.getElementById('date').value;
+              const time = document.getElementById('time').value;
+              const service = document.getElementById('service').value;
+
+              const confirmation = document.getElementById('confirmation');
+              if (date && time && service) {
+                  confirmation.innerHTML = `<p>Seu horário está agendado para ${date} às ${time}. Serviço selecionado: ${service}.</p>`;
+              } else {
+                  confirmation.innerHTML = `<p>Por favor, preencha todos os campos.</p>`;
+              }
+          });
+      });
+  </script>
+</body>
+</html>
