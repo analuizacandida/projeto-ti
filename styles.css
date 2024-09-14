@@ -101,7 +101,7 @@ main {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   color: #85586f;
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem; /* Tamanho da fonte maior */
 }
 .content-section p {
@@ -176,8 +176,8 @@ main {
 .principal h2 {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  color: #85586f;
-  font-family: 'Glacial Indifference', sans-serif;
+  color: #F8ECD1;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem; /* Tamanho da fonte maior */
   text-align: center;
 
@@ -245,6 +245,9 @@ main {
   padding: 20px;
   background-color: #F8ECD1 ;
   text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: black;
+  border-radius: 10px;
 }
 
 .contact-info {
