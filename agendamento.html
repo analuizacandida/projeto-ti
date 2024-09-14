@@ -10,8 +10,21 @@
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-to-home">←</a>
         <h2>Agendamento</h2>
         <form id="appointmentForm">
+            <div class="form-group">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" placeholder="Digite seu telefone">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail">
+            </div>
             <div class="form-group">
                 <label for="service">Selecione o serviço desejado:</label>
                 <select id="service">
@@ -21,6 +34,9 @@
                     <option value="manicure">Manicure</option>
                     <option value="pedicure">Pedicure</option>
                     <option value="massagem">Massagem</option>
+                    <option value="maquiagem">Maquiagem</option>
+                    <option value="limpeza">Limpeza Facial</option>
+                    <option value="cabelo">Tratamento Capilar</option>
                 </select>
             </div>
             <div class="form-group">
@@ -51,18 +67,22 @@
           document.getElementById('appointmentForm').addEventListener('submit', function (event) {
               event.preventDefault();
 
+              const name = document.getElementById('name').value;
+              const phone = document.getElementById('phone').value;
+              const email = document.getElementById('email').value;
               const date = document.getElementById('date').value;
               const time = document.getElementById('time').value;
               const service = document.getElementById('service').value;
 
               const confirmation = document.getElementById('confirmation');
-              if (date && time && service) {
-                  confirmation.innerHTML = `<p>Seu horário está agendado para ${date} às ${time}. Serviço selecionado: ${service}.</p>`;
+              if (name && phone && email && date && time && service) {
+                  confirmation.innerHTML = `<p>Seu horário está agendado para ${date} às ${time}. Serviço selecionado: ${service}.<br>Nome: ${name}<br>Telefone: ${phone}<br>E-mail: ${email}</p>`;
               } else {
                   confirmation.innerHTML = `<p>Por favor, preencha todos os campos.</p>`;
               }
           });
       });
   </script>
+  
 </body>
 </html>
