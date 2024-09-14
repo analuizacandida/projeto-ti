@@ -1,6 +1,7 @@
 # Studio Beauty
 
 Bem-vindo ao projeto **Studio Beauty**! Este projeto visa oferecer uma experiência moderna e eficiente para agendamentos de serviços em um salão de beleza. A aplicação permite que os clientes visualizem os serviços oferecidos, agendem horários e recebam confirmações de seus agendamentos.
+Link para acessar a página: https://analuizacandida.github.io/projeto-ti/
 
 ## 📋 Descrição do Projeto
 
