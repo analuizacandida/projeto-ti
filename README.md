@@ -38,4 +38,4 @@ O projeto está organizado da seguinte forma:
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/analuizacandida/protjetoceub.git
+   git clone https://github.com/analuizacandida/projeto-ti.git
